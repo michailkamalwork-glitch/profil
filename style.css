@@ -1,0 +1,115 @@
+:root {
+    --bg: #0a0a0a;
+    --blue: #00f3ff;
+    --pink: #ff00ff; /* GTA Vice City Pink */
+    --text: #ffffff;
+    --card-bg: rgba(20, 20, 20, 0.8);
+}
+
+.light-mode {
+    --bg: #f0f0f0;
+    --text: #111;
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background 0.4s, color 0.4s, transform 0.3s;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* النيون */
+.neon-blue { color: var(--blue); text-shadow: 0 0 10px var(--blue), 0 0 20px var(--blue); }
+.neon-pink { color: var(--pink); text-shadow: 0 0 10px var(--pink), 0 0 20px var(--pink); }
+
+/* الهيدر */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-controls button {
+    background: transparent;
+    border: 1px solid var(--pink);
+    color: var(--pink);
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--pink);
+}
+
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 { font-size: 4rem; margin-bottom: 20px; }
+
+/* المشاريع */
+.projects { padding: 80px 8%; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 2px solid var(--blue);
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.822);
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    border-color: var(--pink);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+.project-card h3 { color: var(--blue); margin-bottom: 15px; }
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--pink);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--pink);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
